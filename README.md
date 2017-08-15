@@ -1,6 +1,6 @@
 # HGToolBox
 
-[![CI Status](http://img.shields.io/travis/Alexander Ortiz/HGToolBox.svg?style=flat)](https://travis-ci.org/Alexander Ortiz/HGToolBox)
+[![CI Status](http://img.shields.io/travis/Alexander Ortiz/HGToolBox.svg?style=flat)](https://github.com/hgp691/HGToolBox)
 [![Version](https://img.shields.io/cocoapods/v/HGToolBox.svg?style=flat)](http://cocoapods.org/pods/HGToolBox)
 [![License](https://img.shields.io/cocoapods/l/HGToolBox.svg?style=flat)](http://cocoapods.org/pods/HGToolBox)
 [![Platform](https://img.shields.io/cocoapods/p/HGToolBox.svg?style=flat)](http://cocoapods.org/pods/HGToolBox)
@@ -22,7 +22,7 @@ pod "HGToolBox"
 
 ## Author
 
-Alexander Ortiz, alex@pidefarma.com
+Horacio Guzmán Parra, hgp691@gmail.com
 
 ## License
 
