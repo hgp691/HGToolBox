@@ -1,0 +1,22 @@
+{
+  "name": "HGToolBox",
+  "version": "0.1.0",
+  "summary": "A short description of HGToolBox.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Alexander Ortiz/HGToolBox",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Alexander Ortiz": "alex@pidefarma.com"
+  },
+  "source": {
+    "git": "https://github.com/Alexander Ortiz/HGToolBox.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HGToolBox/Classes/**/*"
+}
