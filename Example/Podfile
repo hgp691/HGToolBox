@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HGToolBox_Example' do
+  pod 'HGToolBox', :path => '../'
+
+  target 'HGToolBox_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
