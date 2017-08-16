@@ -21,22 +21,22 @@ class HGTextInputLeftView: UIView {
     //MARK: VARIABLES DE PADDING DEL CONTENEDOR
     @IBInspectable var paddingSuperior:CGFloat = 0.0{
         didSet{
-            self.configurarCampoTexto()
+            self.configurarContenedor()
         }
     }
     @IBInspectable var paddingInferior:CGFloat = 0.0{
         didSet{
-            self.configurarCampoTexto()
+            self.configurarContenedor()
         }
     }
     @IBInspectable var paddingIzquierda:CGFloat = 0.0{
         didSet{
-            self.configurarCampoTexto()
+            self.configurarContenedor()
         }
     }
     @IBInspectable var paddingDerecha:CGFloat = 0.0{
         didSet{
-            self.configurarCampoTexto()
+            self.configurarContenedor()
         }
     }
     
@@ -46,6 +46,9 @@ class HGTextInputLeftView: UIView {
             print("Did set radioCampo")
             if radioCampoTexto < 0.0{
                 radioCampoTexto = 0
+            }
+            if self._campo == nil{
+                self.configurarCampoTexto()
             }
             self._campo.layer.cornerRadius = radioCampoTexto
         }
@@ -73,9 +76,10 @@ class HGTextInputLeftView: UIView {
     
     @IBInspectable var colorFondo:UIColor = .clear{
         didSet{
-            if self._campo != nil{
-                self._campo.backgroundColor = colorFondo
+            if self._campo == nil{
+                self.configurarCampoTexto()
             }
+            self._campo.backgroundColor = colorFondo
         }
     }
     
@@ -114,14 +118,15 @@ class HGTextInputLeftView: UIView {
             if self.existeFuente(nombre: fuente){
                 self._fuente = UIFont(name: self.fuente, size: self.tamanoLetra)!
             }else{
-                print("No existe fuente \(fuente)")
+                print("No existe fuente fuente \(fuente)")
             }
         }
     }
     
-    var _fuente:UIFont = UIFont(name: "Arial", size: 17.0)!{
+    var _fuente:UIFont = UIFont(name: "ArialMT", size: 17.0)!{
         didSet{
             self.configurarLetraCampo()
+            self.tamanoError = 10.0
         }
     }
     
@@ -135,8 +140,10 @@ class HGTextInputLeftView: UIView {
     
     @IBInspectable var tamanoError:CGFloat = 10.0{
         didSet{
-            if self.existeFuente(nombre: fuente) && self._error != nil{
-                self._error.font = UIFont(name: self.fuente, size: tamanoError)
+            if self.existeFuente(nombre: self._fuente.fontName) && self._error != nil{
+                self._error.font = UIFont(name: self._fuente.fontName, size: tamanoError)
+            }else{
+                print("no existe fuente tamanoError \(fuente)")
             }
         }
     }
@@ -151,7 +158,7 @@ class HGTextInputLeftView: UIView {
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        //self.configurarCampoTexto()
+        self.configurarCampoTexto()
     }
     
     /// FUNCION QUE CONFIGURA EL CAMPO DE TEXTO
@@ -160,52 +167,47 @@ class HGTextInputLeftView: UIView {
         self.configurarPlaceholder()
     }
     
-    
-
-
-    @available(iOS 9.0, *)
-    private func configurarCampoTextoYErrorTamano(){
-        
-        if self.subviews.count > 0{
-            self.subviews.forEach { (vista) in
-                vista.removeFromSuperview()
-            }
+    private func configurarContenedor(){
+        print("Configurar contenedor")
+        if self._contenedor == nil{
+            print("Instancia")
+            self._contenedor = UIView()
+            self.addSubview(_contenedor)
+            self._contenedor.translatesAutoresizingMaskIntoConstraints = false
+            self._contenedor.backgroundColor = .clear
         }
-        
-        self._campo = UITextField()
-        self._error = UILabel()
-        self._contenedor = UIView()
-        
-        self.addSubview(_contenedor)
-        self._contenedor.translatesAutoresizingMaskIntoConstraints = false
-        self._contenedor.backgroundColor = .clear
         self._contenedor.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.paddingIzquierda).isActive = true
-        
         self._contenedor.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.paddingDerecha).isActive = true
         self._contenedor.topAnchor.constraint(equalTo: self.topAnchor, constant: self.paddingSuperior).isActive = true
         self._contenedor.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -self.paddingInferior).isActive = true
+    }
+    
+    private func configurarCampoTextoYErrorTamano(){
         
-        
-        self._contenedor.addSubview(self._campo)
-        self._contenedor.addSubview(self._error)
-        
-        self._campo.translatesAutoresizingMaskIntoConstraints = false
-        self._error.translatesAutoresizingMaskIntoConstraints = false
+        if self._contenedor == nil{
+            self.configurarContenedor()
+        }
+        if self._campo == nil{
+            self._campo = UITextField()
+            self._contenedor.addSubview(self._campo)
+            self._campo.translatesAutoresizingMaskIntoConstraints = false
+        }
+        if self._error == nil{
+            self._error = UILabel()
+            self._contenedor.addSubview(self._error)
+            self._error.translatesAutoresizingMaskIntoConstraints = false
+            self._error.textAlignment = .right
+        }
         //error
         self._error.leadingAnchor.constraint(equalTo: self._contenedor.leadingAnchor).isActive = true
         self._error.trailingAnchor.constraint(equalTo: self._contenedor.trailingAnchor).isActive = true
         self._error.topAnchor.constraint(equalTo: self._contenedor.topAnchor).isActive = true
         self._error.heightAnchor.constraint(equalTo: self._contenedor.heightAnchor, multiplier: 0.3).isActive = true
         
-        self._error.textAlignment = .right
-        
         self._campo.leadingAnchor.constraint(equalTo: self._contenedor.leadingAnchor).isActive = true
         self._campo.trailingAnchor.constraint(equalTo: self._contenedor.trailingAnchor).isActive = true
         self._campo.bottomAnchor.constraint(equalTo: self._contenedor.bottomAnchor).isActive = true
         self._campo.topAnchor.constraint(equalTo: self._error.bottomAnchor).isActive = true
-        
-        //self._campo.backgroundColor = .red
-        //self._error.backgroundColor = .yellow
     }
     
     func configurarPlaceholder(){
