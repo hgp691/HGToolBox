@@ -9,10 +9,10 @@
 import UIKit
 
 @IBDesignable
-class HGSimpleButton: UIButton {
+public class HGSimpleButton: UIButton {
 
     @IBInspectable
-    var cornerRadius:CGFloat = 0.0{
+    public var cornerRadius:CGFloat = 0.0{
         didSet{
             if self.cornerRadius < 0{
                 self.cornerRadius = 0
@@ -22,7 +22,7 @@ class HGSimpleButton: UIButton {
     }
    
     @IBInspectable
-    var borderWidth:CGFloat = 0.0{
+    public var borderWidth:CGFloat = 0.0{
         didSet{
             if self.borderWidth < 0{
                 self.borderWidth = 0
@@ -32,7 +32,7 @@ class HGSimpleButton: UIButton {
     }
     
     @IBInspectable
-    var borderColor:UIColor = .clear{
+    public var borderColor:UIColor = .clear{
         didSet{
             self.layer.borderColor = self.borderColor.cgColor
         }

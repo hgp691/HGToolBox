@@ -10,7 +10,7 @@ import UIKit
 
 @available(iOS 9.0, *)
 @IBDesignable
-class HGTextInputLeftView: UIView {
+public class HGTextInputLeftView: UIView {
     
     private var _tipo:HGTextInputType = .name
     private var _campo:UITextField!
@@ -19,29 +19,34 @@ class HGTextInputLeftView: UIView {
     private var _viewIzquierda:UIView!
     
     //MARK: VARIABLES DE PADDING DEL CONTENEDOR
-    @IBInspectable var paddingSuperior:CGFloat = 0.0{
+    @IBInspectable
+    public var paddingSuperior:CGFloat = 0.0{
         didSet{
             self.configurarContenedor()
         }
     }
-    @IBInspectable var paddingInferior:CGFloat = 0.0{
+    @IBInspectable
+    public var paddingInferior:CGFloat = 0.0{
         didSet{
             self.configurarContenedor()
         }
     }
-    @IBInspectable var paddingIzquierda:CGFloat = 0.0{
+    @IBInspectable
+    public var paddingIzquierda:CGFloat = 0.0{
         didSet{
             self.configurarContenedor()
         }
     }
-    @IBInspectable var paddingDerecha:CGFloat = 0.0{
+    @IBInspectable
+    public var paddingDerecha:CGFloat = 0.0{
         didSet{
             self.configurarContenedor()
         }
     }
     
     //MARK: VARIABLES PARA EL BORDE
-    @IBInspectable var radioCampoTexto:CGFloat = 0.0{
+    @IBInspectable
+    public var radioCampoTexto:CGFloat = 0.0{
         didSet{
             print("Did set radioCampo")
             if radioCampoTexto < 0.0{
@@ -53,7 +58,8 @@ class HGTextInputLeftView: UIView {
             self._campo.layer.cornerRadius = radioCampoTexto
         }
     }
-    @IBInspectable var anchoBorde:CGFloat = 0.0{
+    @IBInspectable
+    public var anchoBorde:CGFloat = 0.0{
         didSet{
             if self._campo == nil{
                 self.configurarCampoTexto()
@@ -64,7 +70,8 @@ class HGTextInputLeftView: UIView {
             self._campo.layer.borderWidth = anchoBorde
         }
     }
-    @IBInspectable var colorBorde:UIColor = .clear{
+    @IBInspectable
+    public var colorBorde:UIColor = .clear{
         didSet{
             if self._campo == nil{
                 self.configurarCampoTexto()
@@ -74,7 +81,8 @@ class HGTextInputLeftView: UIView {
     }
     
     
-    @IBInspectable var colorFondo:UIColor = .clear{
+    @IBInspectable
+    public var colorFondo:UIColor = .clear{
         didSet{
             if self._campo == nil{
                 self.configurarCampoTexto()
@@ -84,7 +92,8 @@ class HGTextInputLeftView: UIView {
     }
     
     //DEFINE EL TIPO DEL CAMPO DE TEXTO
-    @IBInspectable var tipo:Int = HGTextInputType.name.hashValue{
+    @IBInspectable
+    public var tipo:Int = HGTextInputType.name.hashValue{
         didSet{
             self._tipo = HGTextInputType(value: tipo)
             self.configurarLetraCampo()
@@ -92,7 +101,8 @@ class HGTextInputLeftView: UIView {
     }
     
     //MARK: VARIABLES PARA IMAGEN IZQUIERDA
-    @IBInspectable var imagenIzquierda:UIImage!{
+    @IBInspectable
+    public var imagenIzquierda:UIImage!{
         didSet{
             if imagenIzquierda != nil{
                 self.configurarImagenIzquierda()
@@ -103,7 +113,8 @@ class HGTextInputLeftView: UIView {
     }
     
     //MARK: VARIABLES PARA Fuentes
-    @IBInspectable var tamanoLetra:CGFloat = 17.0{
+    @IBInspectable
+    public var tamanoLetra:CGFloat = 17.0{
         didSet{
             if self.existeFuente(nombre: self.fuente){
                 self._fuente = UIFont(name: self.fuente, size: self.tamanoLetra)!
@@ -113,7 +124,8 @@ class HGTextInputLeftView: UIView {
         }
     }
     
-    @IBInspectable var fuente:String = "Arial"{
+    @IBInspectable
+    public var fuente:String = "Arial"{
         didSet{
             if self.existeFuente(nombre: fuente){
                 self._fuente = UIFont(name: self.fuente, size: self.tamanoLetra)!
@@ -123,14 +135,15 @@ class HGTextInputLeftView: UIView {
         }
     }
     
-    var _fuente:UIFont = UIFont(name: "ArialMT", size: 17.0)!{
+    private var _fuente:UIFont = UIFont(name: "ArialMT", size: 17.0)!{
         didSet{
             self.configurarLetraCampo()
             self.tamanoError = 10.0
         }
     }
     
-    @IBInspectable var mensajeError:String = ""{
+    @IBInspectable
+    public var mensajeError:String = ""{
         didSet{
             if self._error != nil{
                 self._error.text = mensajeError
@@ -138,7 +151,8 @@ class HGTextInputLeftView: UIView {
         }
     }
     
-    @IBInspectable var tamanoError:CGFloat = 10.0{
+    @IBInspectable
+    public var tamanoError:CGFloat = 10.0{
         didSet{
             if self.existeFuente(nombre: self._fuente.fontName) && self._error != nil{
                 self._error.font = UIFont(name: self._fuente.fontName, size: tamanoError)
@@ -148,7 +162,8 @@ class HGTextInputLeftView: UIView {
         }
     }
     
-    @IBInspectable var colorError:UIColor = .red{
+    @IBInspectable
+    public var colorError:UIColor = .red{
         didSet{
             if self._error != nil{
                 self._error.textColor = colorError
@@ -156,7 +171,7 @@ class HGTextInputLeftView: UIView {
         }
     }
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.configurarCampoTexto()
     }
@@ -210,13 +225,13 @@ class HGTextInputLeftView: UIView {
         self._campo.topAnchor.constraint(equalTo: self._error.bottomAnchor).isActive = true
     }
     
-    func configurarPlaceholder(){
+    private func configurarPlaceholder(){
         if self._campo != nil{
             self._campo.placeholder = self._tipo.placeholder()
         }
     }
     
-    func configurarImagenIzquierda(){
+    private func configurarImagenIzquierda(){
         if self._contenedor == nil{
             self.configurarContenedor()
         }
@@ -249,13 +264,13 @@ class HGTextInputLeftView: UIView {
         self._campo.leftView = self._viewIzquierda
     }
     
-    func configurarLetraCampo(){
+    private func configurarLetraCampo(){
         if self._campo != nil{
             self._campo.placeholder = self._tipo.placeholder()
             self._campo.font = self._fuente
         }
     }
-    func existeFuente(nombre:String)->Bool{
+    private func existeFuente(nombre:String)->Bool{
         let fontFamilyNames = UIFont.familyNames
         for familyName in fontFamilyNames {
             print("Familia \(familyName): ")
@@ -269,7 +284,7 @@ class HGTextInputLeftView: UIView {
         return false
     }
 }
-enum HGTextInputType{
+public enum HGTextInputType{
     
     case email
     case name
