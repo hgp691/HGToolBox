@@ -217,9 +217,19 @@ class HGTextInputLeftView: UIView {
     }
     
     func configurarImagenIzquierda(){
-        self._viewIzquierda = UIView()
-        self._viewIzquierda.translatesAutoresizingMaskIntoConstraints = false
-        self._contenedor.addSubview(self._viewIzquierda)
+        if self._contenedor == nil{
+            self.configurarContenedor()
+        }
+        if self._campo == nil{
+            self.configurarCampoTexto()
+        }
+        if self._viewIzquierda == nil{
+            self._viewIzquierda = UIView()
+            self._viewIzquierda.translatesAutoresizingMaskIntoConstraints = false
+            self._contenedor.addSubview(self._viewIzquierda)
+        }
+        
+        
         self._viewIzquierda.heightAnchor.constraint(equalTo: self._contenedor.heightAnchor, multiplier: 0.7).isActive = true
         let const = imagenIzquierda.size.width / imagenIzquierda.size.height
         self._viewIzquierda.widthAnchor.constraint(equalTo: self._viewIzquierda.heightAnchor, multiplier: const).isActive = true
@@ -231,6 +241,10 @@ class HGTextInputLeftView: UIView {
         bgn.bottomAnchor.constraint(equalTo: self._viewIzquierda.bottomAnchor).isActive = true
         bgn.leadingAnchor.constraint(equalTo: self._viewIzquierda.leadingAnchor).isActive = true
         bgn.trailingAnchor.constraint(equalTo: self._viewIzquierda.trailingAnchor).isActive = true
+        
+        print("El campo")
+        print(self._campo)
+        
         self._campo.leftViewMode = .always
         self._campo.leftView = self._viewIzquierda
     }
@@ -259,6 +273,7 @@ enum HGTextInputType{
     
     case email
     case name
+    case password
     
     public init(){
         self = .name
@@ -269,6 +284,8 @@ enum HGTextInputType{
             self = .name
         case 1:
             self = .email
+        case 2:
+            self = .password
         default:
             self = .name
         }
@@ -276,9 +293,11 @@ enum HGTextInputType{
     public func placeholder()->String{
         switch self{
         case .name:
-            return "Nombre:"
+            return "Nombre"
         case .email:
-            return "Correo:"
+            return "Correo"
+        case .password:
+            return "Contraseña"
         }
     }
 }
