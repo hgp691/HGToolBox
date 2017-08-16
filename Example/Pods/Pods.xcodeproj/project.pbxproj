@@ -10,11 +10,11 @@
 		019B002B513B3460A5B4074BC5984AF8 /* HGToolBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8EF5ACBAD6E2C542884013E0DEF873 /* HGToolBox-dummy.m */; };
 		2107DCA053F0E802C1ED39F130319A3A /* Pods-HGToolBox_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E7DF6E10428FFBA76D7C8596D3A0E6 /* Pods-HGToolBox_Example-dummy.m */; };
 		2A968F91F5E366605220490A14F66FB9 /* HGToolBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCB0E21FC28A2B80435894D65AC4B03D /* HGToolBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A844C641AD09AD0876D524B3AF95960 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FF0AA6342B8816DF229E77F554790D /* ReplaceMe.swift */; };
 		4D1A1DB66B4163B4FBC070F366C482D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		616D782605020666586787194AFC49DA /* Pods-HGToolBox_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88268995CCD192E343F86326E22A8EFC /* Pods-HGToolBox_Tests-dummy.m */; };
 		661BD610581F0FB5B2CAC3C50DBFF642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		93C780514BD436F02D09FA0BBF3FEE92 /* Pods-HGToolBox_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 320C75EAC35DDC371D3CE4F17FCD90A7 /* Pods-HGToolBox_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46ACF461F43E2CC00ECC4CD /* HGTextInputLeftView.swift */; };
 		D8BCE04FDD917576B1648CF8909A3A4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E340D212F5EC0FB741FF1F8E5B04658F /* Pods-HGToolBox_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03F06A9223102B0D755F089683F748 /* Pods-HGToolBox_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -37,29 +37,29 @@
 		320C75EAC35DDC371D3CE4F17FCD90A7 /* Pods-HGToolBox_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HGToolBox_Example-umbrella.h"; sourceTree = "<group>"; };
 		3C7DE68A2EDF106C853E7C91017397AF /* Pods-HGToolBox_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HGToolBox_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		4841F1EFC50CA1C7CDCCC4F457C767F6 /* Pods-HGToolBox_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HGToolBox_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4A5B51150D9E15FF36D35C5EB2DA8671 /* Pods-HGToolBox_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HGToolBox_Example.modulemap"; sourceTree = "<group>"; };
-		4CCF1ACCEAE29A912BB0A41096CCB69A /* HGToolBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HGToolBox.modulemap; sourceTree = "<group>"; };
+		4A5B51150D9E15FF36D35C5EB2DA8671 /* Pods-HGToolBox_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HGToolBox_Example.modulemap"; sourceTree = "<group>"; };
+		4CCF1ACCEAE29A912BB0A41096CCB69A /* HGToolBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HGToolBox.modulemap; sourceTree = "<group>"; };
 		53097F916752AC972D2717A4B8C9678F /* Pods-HGToolBox_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGToolBox_Example.release.xcconfig"; sourceTree = "<group>"; };
 		54E7DF6E10428FFBA76D7C8596D3A0E6 /* Pods-HGToolBox_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HGToolBox_Example-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6FF47B748070D05F6A65E52A0DD59D85 /* Pods_HGToolBox_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HGToolBox_Example.framework; path = "Pods-HGToolBox_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF47B748070D05F6A65E52A0DD59D85 /* Pods_HGToolBox_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HGToolBox_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		765AFCA7C7070766959B143A712E51DE /* Pods-HGToolBox_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HGToolBox_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		805D4D5BF7DA1E06B31C811AF7CC601B /* Pods_HGToolBox_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HGToolBox_Tests.framework; path = "Pods-HGToolBox_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		805D4D5BF7DA1E06B31C811AF7CC601B /* Pods_HGToolBox_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HGToolBox_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88268995CCD192E343F86326E22A8EFC /* Pods-HGToolBox_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HGToolBox_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA8EF5ACBAD6E2C542884013E0DEF873 /* HGToolBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGToolBox-dummy.m"; sourceTree = "<group>"; };
-		AD2129ACB970A758D090D15662011B07 /* HGToolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HGToolBox.framework; path = HGToolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD2129ACB970A758D090D15662011B07 /* HGToolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HGToolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B391675F12C347501E5C104C3F100297 /* HGToolBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGToolBox.xcconfig; sourceTree = "<group>"; };
 		C126AE46D62CD8F1AFBB6FF865C79C2F /* Pods-HGToolBox_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HGToolBox_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C46ACF461F43E2CC00ECC4CD /* HGTextInputLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGTextInputLeftView.swift; path = HGToolBox/Classes/HGTextInputLeftView.swift; sourceTree = "<group>"; };
 		C64D197A1E5CCADAC0107DD6336C77C3 /* Pods-HGToolBox_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HGToolBox_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C80B0664B416BA0A8F25AA646C617D39 /* Pods-HGToolBox_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGToolBox_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCB0E21FC28A2B80435894D65AC4B03D /* HGToolBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGToolBox-umbrella.h"; sourceTree = "<group>"; };
 		D43714F742D972129B4672A220819501 /* Pods-HGToolBox_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HGToolBox_Tests-resources.sh"; sourceTree = "<group>"; };
-		D8FF0AA6342B8816DF229E77F554790D /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = HGToolBox/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		DF02C7DBAC53682179A5134C0E379867 /* Pods-HGToolBox_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGToolBox_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E7BFBC71F9B63B95D60834C0D655A097 /* Pods-HGToolBox_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HGToolBox_Example-resources.sh"; sourceTree = "<group>"; };
 		EC03F06A9223102B0D755F089683F748 /* Pods-HGToolBox_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HGToolBox_Tests-umbrella.h"; sourceTree = "<group>"; };
-		EC75B83E661BF2F811A78422A101D716 /* Pods-HGToolBox_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HGToolBox_Tests.modulemap"; sourceTree = "<group>"; };
+		EC75B83E661BF2F811A78422A101D716 /* Pods-HGToolBox_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HGToolBox_Tests.modulemap"; sourceTree = "<group>"; };
 		F02773F5C8747F065ADB6FE1EE9137B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B45C5B929FCDAE1BAC91AE760CA66E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +123,7 @@
 		348EACF25682BA289CADE3334F55D843 /* HGToolBox */ = {
 			isa = PBXGroup;
 			children = (
-				D8FF0AA6342B8816DF229E77F554790D /* ReplaceMe.swift */,
+				C46ACF451F43E26B00ECC4CD /* HGTextInputLeftView */,
 				DDA1B418EA81002137BE67EBBCBAF9E1 /* Support Files */,
 			);
 			name = HGToolBox;
@@ -165,6 +165,14 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C46ACF451F43E26B00ECC4CD /* HGTextInputLeftView */ = {
+			isa = PBXGroup;
+			children = (
+				C46ACF461F43E2CC00ECC4CD /* HGTextInputLeftView.swift */,
+			);
+			name = HGTextInputLeftView;
 			sourceTree = "<group>";
 		};
 		CA365C63FC69864E1B963C2273B65348 /* Development Pods */ = {
@@ -296,6 +304,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					52598C8DC5BD7102F376C829282A718C = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -329,8 +342,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */,
 				019B002B513B3460A5B4074BC5984AF8 /* HGToolBox-dummy.m in Sources */,
-				3A844C641AD09AD0876D524B3AF95960 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B391675F12C347501E5C104C3F100297 /* HGToolBox.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -635,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B391675F12C347501E5C104C3F100297 /* HGToolBox.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
