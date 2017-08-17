@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,10 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-JG-gwc" customClass="HGTextInputLeftView" customModule="HGToolBox">
-                                <rect key="frame" x="16" y="20" width="343" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-JG-gwc" customClass="HGTextInputLeftView" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="20" width="343" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0ue-6K-29a"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="colorFondo">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,14 +48,16 @@
                                         <color key="value" red="0.94512261279999998" green="0.1960784314" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radioCampoTexto">
-                                        <real key="value" value="6"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-OL-SnR" customClass="HGSimpleButton" customModule="HGToolBox">
-                                <rect key="frame" x="16" y="87" width="343" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-OL-SnR" customClass="HGSimpleButton" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="110" width="343" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BrF-pd-dO8"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,8 +71,70 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f93-Tk-8py" customClass="HGRightDetailButton" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="190" width="343" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="abv-br-t0a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenDerecha" value="arrow"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titulo" value="El primer botón de prueba"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorFuente">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBackground">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="redondeoBorde">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fuente" value="Farah"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tamañoFuente">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorError">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mensajeError" value="Prueba Error"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tamanoError">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2Z-4a-fZG" customClass="HGBoothDetailButton" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="280" width="343" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XpQ-vu-clu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenDerecha" value="arrow"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBackground">
+                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="redondeoBorde">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titulo" value="El Botón"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="top" secondItem="f93-Tk-8py" secondAttribute="bottom" constant="30" id="1fz-NH-pwZ"/>
+                            <constraint firstItem="IRF-OL-SnR" firstAttribute="top" secondItem="sI1-JG-gwc" secondAttribute="bottom" constant="20" id="7UI-Gj-Xjf"/>
+                            <constraint firstItem="IRF-OL-SnR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Fq7-gZ-HHC"/>
+                            <constraint firstItem="sI1-JG-gwc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="He4-6t-IfM"/>
+                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="NBs-PD-gUH"/>
+                            <constraint firstItem="IRF-OL-SnR" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="cCG-1u-NXg"/>
+                            <constraint firstItem="f93-Tk-8py" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="g5a-ij-qpl"/>
+                            <constraint firstItem="sI1-JG-gwc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="h5O-9f-cYv"/>
+                            <constraint firstItem="sI1-JG-gwc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pbD-mi-vSe"/>
+                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="rSO-Pi-TKN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f93-Tk-8py" secondAttribute="trailing" id="rTs-21-0av"/>
+                            <constraint firstItem="f93-Tk-8py" firstAttribute="top" secondItem="IRF-OL-SnR" secondAttribute="bottom" constant="20" id="u1V-Nd-cQK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -76,6 +143,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="40" height="40"/>
         <image name="calendario" width="80" height="53"/>
     </resources>
 </document>

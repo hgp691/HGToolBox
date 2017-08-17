@@ -18,6 +18,8 @@
 		D8BCE04FDD917576B1648CF8909A3A4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E340D212F5EC0FB741FF1F8E5B04658F /* Pods-HGToolBox_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03F06A9223102B0D755F089683F748 /* Pods-HGToolBox_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA5C35D71F44E868004153DA /* HGSimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C35D61F44E868004153DA /* HGSimpleButton.swift */; };
+		FAA041B91F4634CB00CFA0A2 /* HGRightDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA041B81F4634CB00CFA0A2 /* HGRightDetailButton.swift */; };
+		FAA041BC1F4653F600CFA0A2 /* HGBoothDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F02773F5C8747F065ADB6FE1EE9137B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B45C5B929FCDAE1BAC91AE760CA66E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5C35D61F44E868004153DA /* HGSimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGSimpleButton.swift; path = HGToolBox/Classes/HGSimpleButton.swift; sourceTree = "<group>"; };
+		FAA041B81F4634CB00CFA0A2 /* HGRightDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGRightDetailButton.swift; path = HGToolBox/Classes/HGRightDetailButton.swift; sourceTree = "<group>"; };
+		FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGBoothDetailButton.swift; path = HGToolBox/Classes/HGBoothDetailButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 		348EACF25682BA289CADE3334F55D843 /* HGToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				FAA041BA1F4653C700CFA0A2 /* HGBoothDetailButton */,
+				FAA041B71F46347B00CFA0A2 /* HGRightDetailButton */,
 				FA5C35D51F44E83A004153DA /* HGSimpleButton */,
 				C46ACF451F43E26B00ECC4CD /* HGTextInputLeftView */,
 				DDA1B418EA81002137BE67EBBCBAF9E1 /* Support Files */,
@@ -223,6 +229,22 @@
 				FA5C35D61F44E868004153DA /* HGSimpleButton.swift */,
 			);
 			name = HGSimpleButton;
+			sourceTree = "<group>";
+		};
+		FAA041B71F46347B00CFA0A2 /* HGRightDetailButton */ = {
+			isa = PBXGroup;
+			children = (
+				FAA041B81F4634CB00CFA0A2 /* HGRightDetailButton.swift */,
+			);
+			name = HGRightDetailButton;
+			sourceTree = "<group>";
+		};
+		FAA041BA1F4653C700CFA0A2 /* HGBoothDetailButton */ = {
+			isa = PBXGroup;
+			children = (
+				FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */,
+			);
+			name = HGBoothDetailButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA041B91F4634CB00CFA0A2 /* HGRightDetailButton.swift in Sources */,
+				FAA041BC1F4653F600CFA0A2 /* HGBoothDetailButton.swift in Sources */,
 				FA5C35D71F44E868004153DA /* HGSimpleButton.swift in Sources */,
 				C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */,
 				019B002B513B3460A5B4074BC5984AF8 /* HGToolBox-dummy.m in Sources */,
