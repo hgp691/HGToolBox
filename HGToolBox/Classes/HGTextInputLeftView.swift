@@ -18,6 +18,8 @@ public class HGTextInputLeftView: UIView {
     private var _contenedor:UIView!
     private var _viewIzquierda:UIView!
     
+    private var confirmarConCampo:HGTextInputLeftView!
+    
     //MARK: VARIABLES DE PADDING DEL CONTENEDOR
     @IBInspectable
     public var paddingSuperior:CGFloat = 0.0{
@@ -167,6 +169,7 @@ public class HGTextInputLeftView: UIView {
         didSet{
             if self._error != nil{
                 self._error.textColor = colorError
+                self._campo.layer.borderColor = self.colorError.cgColor
             }
         }
     }
@@ -279,6 +282,7 @@ public class HGTextInputLeftView: UIView {
             self._campo.font = self._fuente
         }
     }
+    
     private func existeFuente(nombre:String)->Bool{
         let fontFamilyNames = UIFont.familyNames
         for familyName in fontFamilyNames {
@@ -292,16 +296,106 @@ public class HGTextInputLeftView: UIView {
         }
         return false
     }
+    
+    public func confirMarConCampo(campo:HGTextInputLeftView){
+        if self._tipo == .confirmPassword{
+            self.confirmarConCampo = campo
+        }
+    }
+    
+    public func setValue(value:String){
+        if self._campo != nil{
+            self._campo.text = value
+        }
+    }
+    
+    public func esValido()->Bool{
+        if self.noEsVacio(){
+            switch self._tipo {
+            case .name:
+                return true
+            case .email:
+                return self.validarEmail()
+            case .password:
+                return self.validarPW()
+            case .confirmPassword:
+                return self.validarPWConfirm()
+            case .cell:
+                return true
+            }
+        }else{
+            return false
+        }
+        
+    }
+    
+    
+    //MARK: FUNCIONES DE VALIDACION
+    private func noEsVacio()->Bool{
+        self.quitarError()
+        if (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).characters.count)! > 0{
+            return true
+        }
+        self.ponerError(error: "Debe completar")
+        return false
+    }
+    
+    private func validarEmail()->Bool{
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        if emailTest.evaluate(with: self._campo.text){
+            self.quitarError()
+            return true
+        }else{
+            self.ponerError(error: "Esto no es un Email")
+            return false
+        }
+    }
+    private func validarPW()->Bool{
+        let pwRegEx = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{6,10}"
+        let pwTest = NSPredicate(format:"SELF MATCHES %@", pwRegEx)
+        if pwTest.evaluate(with: self._campo.text){
+            self.quitarError()
+            return true
+        }else{
+            self.ponerError(error: "No cumple con lo esperado")
+            return false
+        }
+    }
+    private func validarPWConfirm()->Bool{
+        self.quitarError()
+        if self.value() == self.confirmarConCampo.value(){
+            return true
+        }
+        self.ponerError(error: "Las contraseñas deben coincidir")
+        return false
+    }
+    func value()->String{
+        return (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+    }
+    
+    private func ponerError(error:String){
+        self._error.text = error
+        self._campo.layer.borderWidth = 2.0
+    }
+    
+    private func quitarError(){
+        self._error.text = ""
+        self._campo.layer.borderWidth = 0.0
+    }
 }
 public enum HGTextInputType{
     
     case email
     case name
     case password
+    case confirmPassword
+    case cell
     
     public init(){
         self = .name
     }
+    
     public init(value:Int){
         switch value {
         case 0:
@@ -310,18 +404,42 @@ public enum HGTextInputType{
             self = .email
         case 2:
             self = .password
+        case 3:
+            self = .confirmPassword
+        case 4:
+            self = .cell
         default:
             self = .name
         }
     }
+    
     public func placeholder()->String{
-        switch self{
-        case .name:
-            return "Nombre"
-        case .email:
-            return "Correo"
-        case .password:
-            return "Contraseña"
+        if HGUtils.isSpanish{
+            switch self{
+            case .name:
+                return "Nombre"
+            case .email:
+                return "Correo"
+            case .password:
+                return "Contraseña"
+            case .confirmPassword:
+                return "Confirmar Contraseña"
+            case .cell:
+                return "Celular"
+            }
+        }else{
+            switch self{
+            case .name:
+                return "Nombre"
+            case .email:
+                return "Correo"
+            case .password:
+                return "Contraseña"
+            case .confirmPassword:
+                return "Confirmar Contraseña"
+            case .cell:
+                return "Celular"
+            }
         }
     }
 }

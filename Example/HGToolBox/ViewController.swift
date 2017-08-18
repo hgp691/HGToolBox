@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
         //self.btnHGRightDetailButton.addTarget(target: self, action: #selector(self.actionForHGRightDetailButton), foR: .touchUpInside)
         
+        print(HGUtils.isSpanish)
         
     }
 
@@ -30,6 +31,17 @@ class ViewController: UIViewController {
 
     func actionForHGRightDetailButton(){
         print("Hola btnHGRightDetailButton")
+    }
+ 
+    func esEspanol()->Bool{
+        let pre = Locale.preferredLanguages[0]
+        let idioma=pre.components(separatedBy: "-")
+        ////print(idioma[0])
+        if idioma[0] == "es" {
+            return true
+        }else{
+            return false
+        }
     }
     
 }

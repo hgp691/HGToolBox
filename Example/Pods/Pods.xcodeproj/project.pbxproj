@@ -21,6 +21,7 @@
 		FA5C35D71F44E868004153DA /* HGSimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C35D61F44E868004153DA /* HGSimpleButton.swift */; };
 		FAA041B91F4634CB00CFA0A2 /* HGRightDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA041B81F4634CB00CFA0A2 /* HGRightDetailButton.swift */; };
 		FAA041BC1F4653F600CFA0A2 /* HGBoothDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */; };
+		FAA939641F476A8B006EF6E7 /* HGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA939631F476A8B006EF6E7 /* HGUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FA5C35D61F44E868004153DA /* HGSimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGSimpleButton.swift; path = HGToolBox/Classes/HGSimpleButton.swift; sourceTree = "<group>"; };
 		FAA041B81F4634CB00CFA0A2 /* HGRightDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGRightDetailButton.swift; path = HGToolBox/Classes/HGRightDetailButton.swift; sourceTree = "<group>"; };
 		FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGBoothDetailButton.swift; path = HGToolBox/Classes/HGBoothDetailButton.swift; sourceTree = "<group>"; };
+		FAA939631F476A8B006EF6E7 /* HGUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGUtils.swift; path = HGToolBox/Classes/HGUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		348EACF25682BA289CADE3334F55D843 /* HGToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				FAA939621F4768D4006EF6E7 /* HGUtils */,
 				C4329F181F4698AD00148FEE /* HGFormViewController */,
 				FAA041BA1F4653C700CFA0A2 /* HGBoothDetailButton */,
 				FAA041B71F46347B00CFA0A2 /* HGRightDetailButton */,
@@ -256,6 +259,14 @@
 				FAA041BB1F4653F600CFA0A2 /* HGBoothDetailButton.swift */,
 			);
 			name = HGBoothDetailButton;
+			sourceTree = "<group>";
+		};
+		FAA939621F4768D4006EF6E7 /* HGUtils */ = {
+			isa = PBXGroup;
+			children = (
+				FAA939631F476A8B006EF6E7 /* HGUtils.swift */,
+			);
+			name = HGUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +399,7 @@
 			files = (
 				FAA041B91F4634CB00CFA0A2 /* HGRightDetailButton.swift in Sources */,
 				FAA041BC1F4653F600CFA0A2 /* HGBoothDetailButton.swift in Sources */,
+				FAA939641F476A8B006EF6E7 /* HGUtils.swift in Sources */,
 				FA5C35D71F44E868004153DA /* HGSimpleButton.swift in Sources */,
 				C4329F1A1F4698F900148FEE /* HGFormViewController.swift in Sources */,
 				C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */,
