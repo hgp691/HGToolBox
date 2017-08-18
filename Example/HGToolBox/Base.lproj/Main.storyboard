@@ -102,36 +102,51 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2Z-4a-fZG" customClass="HGBoothDetailButton" customModule="HGToolBox">
-                                <rect key="frame" x="16" y="280" width="343" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNQ-2A-0NR" customClass="HGBoothDetailButton" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="270" width="343" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="XpQ-vu-clu"/>
+                                    <constraint firstAttribute="height" constant="70" id="00F-xb-Wep"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenDerecha" value="arrow"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBackground">
-                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="redondeoBorde">
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titulo" value="El Botón"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenDerecha" value="arrow"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenIzquierda" value="calendario"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titulo" value="El calendario"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fuente" value="Cochin-Bold"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tamañoFuente">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorFuente">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBackground">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mensajeError" value="Prueba error uno"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tamanoError">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorError">
+                                        <color key="value" red="0.74901960779999999" green="0.015686274510000001" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="top" secondItem="f93-Tk-8py" secondAttribute="bottom" constant="30" id="1fz-NH-pwZ"/>
                             <constraint firstItem="IRF-OL-SnR" firstAttribute="top" secondItem="sI1-JG-gwc" secondAttribute="bottom" constant="20" id="7UI-Gj-Xjf"/>
+                            <constraint firstItem="FNQ-2A-0NR" firstAttribute="top" secondItem="f93-Tk-8py" secondAttribute="bottom" constant="20" id="CRZ-3E-dPc"/>
                             <constraint firstItem="IRF-OL-SnR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Fq7-gZ-HHC"/>
                             <constraint firstItem="sI1-JG-gwc" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="He4-6t-IfM"/>
-                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="NBs-PD-gUH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FNQ-2A-0NR" secondAttribute="trailing" id="XI4-2c-yoJ"/>
                             <constraint firstItem="IRF-OL-SnR" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="cCG-1u-NXg"/>
+                            <constraint firstItem="FNQ-2A-0NR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="g3z-81-eRN"/>
                             <constraint firstItem="f93-Tk-8py" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="g5a-ij-qpl"/>
                             <constraint firstItem="sI1-JG-gwc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="h5O-9f-cYv"/>
                             <constraint firstItem="sI1-JG-gwc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="pbD-mi-vSe"/>
-                            <constraint firstItem="C2Z-4a-fZG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="rSO-Pi-TKN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f93-Tk-8py" secondAttribute="trailing" id="rTs-21-0av"/>
                             <constraint firstItem="f93-Tk-8py" firstAttribute="top" secondItem="IRF-OL-SnR" secondAttribute="bottom" constant="20" id="u1V-Nd-cQK"/>
                         </constraints>

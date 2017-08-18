@@ -70,8 +70,12 @@ class HGBoothDetailButton: UIView {
     @IBInspectable
     public var imagenIzquierda:UIImage!{
         didSet{
+            if self._viewIzquierda == nil{
+                self.configurarBoton()
+            }
+            self._viewIzquierda.image = imagenIzquierda
+            print("Did set imagen izquierda")
             self.configurarBoton()
-            self._viewIzquierda.image = imagenDerecha
         }
     }
 
@@ -259,7 +263,12 @@ class HGBoothDetailButton: UIView {
         self._viewIzquierda.leadingAnchor.constraint(equalTo: self._contenedor2.leadingAnchor).isActive = true
         self._viewIzquierda.topAnchor.constraint(equalTo: self._contenedor2.topAnchor).isActive = true
         self._viewIzquierda.bottomAnchor.constraint(equalTo: self._contenedor2.bottomAnchor).isActive = true
-        self._viewIzquierda.widthAnchor.constraint(equalTo: self._viewDerecha.heightAnchor, multiplier: 1.0).isActive = true
+        var constante = 1.0
+        if self.imagenIzquierda != nil{
+            constante = Double(imagenIzquierda.size.width / imagenIzquierda.size.height)
+            print("la imagen izquierda \(constante)")
+        }
+        self._viewIzquierda.widthAnchor.constraint(equalTo: self._viewIzquierda.heightAnchor, multiplier: CGFloat(constante)).isActive = true
         
         //label
         self._placeHolder.leadingAnchor.constraint(equalTo: self._viewIzquierda.trailingAnchor).isActive = true
