@@ -14,6 +14,7 @@
 		616D782605020666586787194AFC49DA /* Pods-HGToolBox_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88268995CCD192E343F86326E22A8EFC /* Pods-HGToolBox_Tests-dummy.m */; };
 		661BD610581F0FB5B2CAC3C50DBFF642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		93C780514BD436F02D09FA0BBF3FEE92 /* Pods-HGToolBox_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 320C75EAC35DDC371D3CE4F17FCD90A7 /* Pods-HGToolBox_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4329F1A1F4698F900148FEE /* HGFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4329F191F4698F900148FEE /* HGFormViewController.swift */; };
 		C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46ACF461F43E2CC00ECC4CD /* HGTextInputLeftView.swift */; };
 		D8BCE04FDD917576B1648CF8909A3A4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E340D212F5EC0FB741FF1F8E5B04658F /* Pods-HGToolBox_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03F06A9223102B0D755F089683F748 /* Pods-HGToolBox_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 		AD2129ACB970A758D090D15662011B07 /* HGToolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HGToolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B391675F12C347501E5C104C3F100297 /* HGToolBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGToolBox.xcconfig; sourceTree = "<group>"; };
 		C126AE46D62CD8F1AFBB6FF865C79C2F /* Pods-HGToolBox_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HGToolBox_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C4329F191F4698F900148FEE /* HGFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGFormViewController.swift; path = HGToolBox/Classes/HGFormViewController.swift; sourceTree = "<group>"; };
 		C46ACF461F43E2CC00ECC4CD /* HGTextInputLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HGTextInputLeftView.swift; path = HGToolBox/Classes/HGTextInputLeftView.swift; sourceTree = "<group>"; };
 		C64D197A1E5CCADAC0107DD6336C77C3 /* Pods-HGToolBox_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HGToolBox_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C80B0664B416BA0A8F25AA646C617D39 /* Pods-HGToolBox_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGToolBox_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		348EACF25682BA289CADE3334F55D843 /* HGToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				C4329F181F4698AD00148FEE /* HGFormViewController */,
 				FAA041BA1F4653C700CFA0A2 /* HGBoothDetailButton */,
 				FAA041B71F46347B00CFA0A2 /* HGRightDetailButton */,
 				FA5C35D51F44E83A004153DA /* HGSimpleButton */,
@@ -174,6 +177,14 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4329F181F4698AD00148FEE /* HGFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C4329F191F4698F900148FEE /* HGFormViewController.swift */,
+			);
+			name = HGFormViewController;
 			sourceTree = "<group>";
 		};
 		C46ACF451F43E26B00ECC4CD /* HGTextInputLeftView */ = {
@@ -378,6 +389,7 @@
 				FAA041B91F4634CB00CFA0A2 /* HGRightDetailButton.swift in Sources */,
 				FAA041BC1F4653F600CFA0A2 /* HGBoothDetailButton.swift in Sources */,
 				FA5C35D71F44E868004153DA /* HGSimpleButton.swift in Sources */,
+				C4329F1A1F4698F900148FEE /* HGFormViewController.swift in Sources */,
 				C46ACF471F43E2CC00ECC4CD /* HGTextInputLeftView.swift in Sources */,
 				019B002B513B3460A5B4074BC5984AF8 /* HGToolBox-dummy.m in Sources */,
 			);

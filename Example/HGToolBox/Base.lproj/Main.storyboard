@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UYO-Xs-H2n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -155,6 +155,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="-1.3493253373313345"/>
+        </scene>
+        <!--Formulario View Controller-->
+        <scene sceneID="6Ox-tu-Aqv">
+            <objects>
+                <viewController id="UYO-Xs-H2n" customClass="FormularioViewController" customModule="HGToolBox_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vaw-Ne-pzU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rci-DK-n07"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PvS-Jp-60M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qv-Bn-gy0" customClass="HGTextInputLeftView" customModule="HGToolBox">
+                                <rect key="frame" x="16" y="547" width="343" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="L3t-nD-NLu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radioCampoTexto">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorFondo">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="imagenIzquierda" value="calendario"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tamanoLetra">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1960784314" green="0.1960784314" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1qv-Bn-gy0" firstAttribute="leading" secondItem="PvS-Jp-60M" secondAttribute="leadingMargin" id="0fk-OC-lmG"/>
+                            <constraint firstItem="Rci-DK-n07" firstAttribute="top" secondItem="1qv-Bn-gy0" secondAttribute="bottom" constant="50" id="7H8-vR-BeG"/>
+                            <constraint firstItem="1qv-Bn-gy0" firstAttribute="trailing" secondItem="PvS-Jp-60M" secondAttribute="trailingMargin" id="MtA-Jk-bxC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="campo" destination="1qv-Bn-gy0" id="7ia-Xp-Py9"/>
+                        <outlet property="distanciaAbajo" destination="7H8-vR-BeG" id="RJN-ty-DQV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmQ-vF-EtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="707.49625187406298"/>
         </scene>
     </scenes>
     <resources>

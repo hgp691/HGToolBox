@@ -171,6 +171,14 @@ public class HGTextInputLeftView: UIView {
         }
     }
     
+    public var delegate:UITextFieldDelegate!{
+        didSet{
+            if self._campo != nil{
+                self._campo.delegate = delegate
+            }
+        }
+    }
+    
     override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.configurarCampoTexto()
@@ -206,6 +214,7 @@ public class HGTextInputLeftView: UIView {
             self._campo = UITextField()
             self._contenedor.addSubview(self._campo)
             self._campo.translatesAutoresizingMaskIntoConstraints = false
+            self._campo.delegate = self.delegate
         }
         if self._error == nil{
             self._error = UILabel()
