@@ -280,6 +280,34 @@ public class HGTextInputLeftView: UIView {
         if self._campo != nil{
             self._campo.placeholder = self._tipo.placeholder()
             self._campo.font = self._fuente
+            
+            switch self._tipo {
+            case .name:
+                self._campo.keyboardType = .namePhonePad
+                break
+            case .email:
+                self._campo.keyboardType = .emailAddress
+                self._campo.autocorrectionType = .no
+                break
+            case .password:
+                self._campo.isSecureTextEntry = true
+                self._campo.autocorrectionType = .no
+                self._campo.keyboardType = .default
+                break
+            case .confirmPassword:
+                self._campo.isSecureTextEntry = true
+                self._campo.autocorrectionType = .no
+                self._campo.keyboardType = .default
+                break
+            case .cell:
+                self._campo.keyboardType = .phonePad
+                self._campo.autocorrectionType = .no
+                break
+            default:
+                break
+            }
+            
+            
         }
     }
     
