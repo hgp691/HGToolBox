@@ -10,7 +10,7 @@ import UIKit
 
 @available(iOS 9.0, *)
 @IBDesignable
-class HGBoothDetailButton: UIView {
+public class HGBoothDetailButton: UIView {
     
     private var _error:UILabel!
     private var _contenedor:UIView!

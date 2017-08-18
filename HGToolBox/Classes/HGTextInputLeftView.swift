@@ -430,15 +430,15 @@ public enum HGTextInputType{
         }else{
             switch self{
             case .name:
-                return "Nombre"
+                return "Full Name"
             case .email:
-                return "Correo"
+                return "E-mail"
             case .password:
-                return "Contraseña"
+                return "Password"
             case .confirmPassword:
-                return "Confirmar Contraseña"
+                return "Confirm Password"
             case .cell:
-                return "Celular"
+                return "Cell phone"
             }
         }
     }
