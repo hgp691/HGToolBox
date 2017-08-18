@@ -303,8 +303,6 @@ public class HGTextInputLeftView: UIView {
                 self._campo.keyboardType = .phonePad
                 self._campo.autocorrectionType = .no
                 break
-            default:
-                break
             }
             
             
