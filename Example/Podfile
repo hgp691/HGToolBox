@@ -1,4 +1,5 @@
 use_frameworks!
+platform :ios, '9.1'
 
 target 'HGToolBox_Example' do
   pod 'HGToolBox', :path => '../'

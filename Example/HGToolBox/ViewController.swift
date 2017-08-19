@@ -9,7 +9,7 @@
 import UIKit
 import HGToolBox
 
-@available(iOS 9.0, *)
+@available(iOS 9.1, *)
 class ViewController: UIViewController {
     
     //@IBOutlet var btnHGRightDetailButton: HGRightDetailButton!
