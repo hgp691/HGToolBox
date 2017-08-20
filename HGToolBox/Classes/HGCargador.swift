@@ -32,7 +32,8 @@ public class HGCargador: NSObject {
             self.delegate.HGCargadorInicioCarga(cargador: self)
         }
         
-        let headers = configuration["headers"] as! [String:String]
+        let headers = self.basicAuth(appUSR: configuration["API_USER"] as! String, appPWD: configuration["API_PW"] as! String)
+        
         
         let url = "\(configuration["dominio"] as! String)\(endPoint)"
         
@@ -80,5 +81,15 @@ public class HGCargador: NSObject {
         }
     }
     
+    private func basicAuth(appUSR:String,appPWD:String)->[String:String]{
+        let first=appUSR+":"+appPWD
+        let plainData=first.data(using: String.Encoding.utf8)
+        let base64=plainData?.base64EncodedData(options: NSData.Base64EncodingOptions(rawValue: 0))
+        let head:String="Basic "+String(data: base64!, encoding: String.Encoding.utf8)!
+        let headers = [
+            "Authorization": head
+        ]
+        return headers
+    }
     
 }
