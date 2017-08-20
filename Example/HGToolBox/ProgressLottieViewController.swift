@@ -16,10 +16,12 @@ class ProgressLottieViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let progress = HGLottieProgress(view: self.view, animationName: "location", loop: true, size: CGSize(width: 200, height: 200))
-        progress.playProgress { (ok) in
-            print("Termino")
-        }
+        let opts = ["lottieAnimationName":"location",
+                    "lottieAnimationSize":CGSize(width: 200.0, height: 200.0),
+                    "loop":true
+                    ] as [String : Any]
+        
+        let progress = HGLottieProgress(view: self.view, configuration: opts, autoplay: true)
         
     }
 
