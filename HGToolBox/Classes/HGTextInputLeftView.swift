@@ -362,7 +362,7 @@ public class HGTextInputLeftView: UIView {
         if (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).characters.count)! > 0{
             return true
         }
-        self.ponerError(error: "Debe completar")
+        self.ponerError(mensaje: "Debe completar")
         return false
     }
     
@@ -373,7 +373,7 @@ public class HGTextInputLeftView: UIView {
             self.quitarError()
             return true
         }else{
-            self.ponerError(error: "Esto no es un Email")
+            self.ponerError(mensaje: "Esto no es un Email")
             return false
         }
     }
@@ -384,7 +384,7 @@ public class HGTextInputLeftView: UIView {
             self.quitarError()
             return true
         }else{
-            self.ponerError(error: "No cumple con lo esperado")
+            self.ponerError(mensaje: "No cumple con lo esperado")
             return false
         }
     }
@@ -393,15 +393,15 @@ public class HGTextInputLeftView: UIView {
         if self.value() == self.confirmarConCampo.value(){
             return true
         }
-        self.ponerError(error: "Las contraseñas deben coincidir")
+        self.ponerError(mensaje: "Las contraseñas deben coincidir")
         return false
     }
     func value()->String{
         return (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
     }
     
-    private func ponerError(error:String){
-        self._error.text = error
+    private func ponerError(mensaje:String){
+        self._error.text = mensaje
         self._campo.layer.borderWidth = 2.0
     }
     

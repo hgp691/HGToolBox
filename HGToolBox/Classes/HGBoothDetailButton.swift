@@ -168,6 +168,7 @@ public class HGBoothDetailButton: UIView {
                 self.configurarBoton()
             }
             self._error.textColor = colorError
+            self._contenedor2.layer.borderColor = colorError.cgColor
         }
     }
     
@@ -299,5 +300,14 @@ public class HGBoothDetailButton: UIView {
             }
         }
         return false
+    }
+    
+    public func quitarError(){
+        self._contenedor2.layer.borderWidth = 0.0
+        self.mensajeError = ""
+    }
+    public func ponerError(mensaje:String){
+        self._contenedor2.layer.borderWidth = 2.0
+        self.mensajeError = mensaje
     }
 }

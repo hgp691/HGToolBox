@@ -155,6 +155,7 @@ public class HGRightDetailButton: UIView {
                 self.configurarBoton()
             }
             self._error.textColor = colorError
+            self._contenedor2.layer.borderColor = colorError.cgColor
         }
     }
     
@@ -269,5 +270,14 @@ public class HGRightDetailButton: UIView {
             }
         }
         return false
+    }
+    
+    public func quitarError(){
+        self._contenedor2.layer.borderWidth = 0.0
+    }
+    
+    public func ponerError(mensaje:String){
+        self._contenedor2.layer.borderWidth = 2.0
+        self.mensajeError = mensaje
     }
 }
