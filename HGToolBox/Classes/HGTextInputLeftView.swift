@@ -362,7 +362,11 @@ public class HGTextInputLeftView: UIView {
         if (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).characters.count)! > 0{
             return true
         }
-        self.ponerError(mensaje: "Debe completar")
+        if HGUtils.isSpanish{
+            self.ponerError(mensaje: "Debe completar")
+        }else{
+            self.ponerError(mensaje: "You must complete")
+        }
         return false
     }
     
@@ -373,7 +377,11 @@ public class HGTextInputLeftView: UIView {
             self.quitarError()
             return true
         }else{
-            self.ponerError(mensaje: "Esto no es un Email")
+            if HGUtils.isSpanish{
+                self.ponerError(mensaje: "Esto no es un Email")
+            }else{
+                self.ponerError(mensaje: "this is´nt an email")
+            }
             return false
         }
     }
@@ -384,7 +392,11 @@ public class HGTextInputLeftView: UIView {
             self.quitarError()
             return true
         }else{
-            self.ponerError(mensaje: "No cumple con lo esperado")
+            if HGUtils.isSpanish{
+                self.ponerError(mensaje: "No cumple con lo esperado")
+            }else{
+                self.ponerError(mensaje: "Error in password")
+            }
             return false
         }
     }
@@ -393,10 +405,14 @@ public class HGTextInputLeftView: UIView {
         if self.value() == self.confirmarConCampo.value(){
             return true
         }
-        self.ponerError(mensaje: "Las contraseñas deben coincidir")
+        if HGUtils.isSpanish{
+            self.ponerError(mensaje: "Las contraseñas deben coincidir")
+        }else{
+            self.ponerError(mensaje: "not the same")
+        }
         return false
     }
-    func value()->String{
+    public func value()->String{
         return (self._campo.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
     }
     

@@ -273,6 +273,7 @@ public class HGRightDetailButton: UIView {
     }
     
     public func quitarError(){
+        self.mensajeError = ""
         self._contenedor2.layer.borderWidth = 0.0
     }
     
