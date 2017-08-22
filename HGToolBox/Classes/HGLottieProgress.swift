@@ -16,7 +16,7 @@ public class HGLottieProgress: UIView {
     public init(view:UIView,configuration:[String:Any],autoplay:Bool){
         super.init(frame: view.frame)
         
-        self.backgroundColor = configuration["lottieAnimationBackGroundColor"] as! UIColor
+        self.backgroundColor = configuration["lottieAnimationBackGroundColor"] as? UIColor
         
         self.animacion = LOTAnimationView(name: configuration["lottieAnimationName"] as! String)
         self.animacion.frame = CGRect(origin: CGPoint.zero, size: configuration["lottieAnimationSize"] as! CGSize)

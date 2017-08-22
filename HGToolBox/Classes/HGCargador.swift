@@ -59,6 +59,11 @@ public class HGCargador: NSObject {
                 break
             }
         
+        }.responseString { (respuesta) in
+                if debug{
+                    print("Respuesta string servicio: \(respuesta)")
+                }
+                
         }
         
     }
