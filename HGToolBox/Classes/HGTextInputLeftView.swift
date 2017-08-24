@@ -365,7 +365,7 @@ public class HGTextInputLeftView: UIView {
         if HGUtils.isSpanish{
             self.ponerError(mensaje: "Debe completar")
         }else{
-            self.ponerError(mensaje: "You must complete")
+            self.ponerError(mensaje: "You must complete it")
         }
         return false
     }
@@ -378,9 +378,9 @@ public class HGTextInputLeftView: UIView {
             return true
         }else{
             if HGUtils.isSpanish{
-                self.ponerError(mensaje: "Esto no es un Email")
+                self.ponerError(mensaje: "Esto no es un e-mail")
             }else{
-                self.ponerError(mensaje: "this is´nt an email")
+                self.ponerError(mensaje: "This is not an e-mail")
             }
             return false
         }
@@ -395,7 +395,7 @@ public class HGTextInputLeftView: UIView {
             if HGUtils.isSpanish{
                 self.ponerError(mensaje: "No cumple con lo esperado")
             }else{
-                self.ponerError(mensaje: "Error in password")
+                self.ponerError(mensaje: "This is not what is expected")
             }
             return false
         }
@@ -406,9 +406,9 @@ public class HGTextInputLeftView: UIView {
             return true
         }
         if HGUtils.isSpanish{
-            self.ponerError(mensaje: "Las contraseñas deben coincidir")
+            self.ponerError(mensaje: "Las contraseñas deben conincidir")
         }else{
-            self.ponerError(mensaje: "not the same")
+            self.ponerError(mensaje: "The passwords don't match")
         }
         return false
     }
@@ -459,7 +459,7 @@ public enum HGTextInputType{
         if HGUtils.isSpanish{
             switch self{
             case .name:
-                return "Nombre"
+                return "Nombre completo"
             case .email:
                 return "Correo"
             case .password:
@@ -472,7 +472,7 @@ public enum HGTextInputType{
         }else{
             switch self{
             case .name:
-                return "Full Name"
+                return "Full name"
             case .email:
                 return "E-mail"
             case .password:
