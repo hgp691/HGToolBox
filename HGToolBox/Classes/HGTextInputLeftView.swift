@@ -288,6 +288,7 @@ public class HGTextInputLeftView: UIView {
             case .email:
                 self._campo.keyboardType = .emailAddress
                 self._campo.autocorrectionType = .no
+                self._campo.autocapitalizationType = .none
                 break
             case .password:
                 self._campo.isSecureTextEntry = true
