@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (4.5.0)
-  - HGToolBox (0.1.17):
+  - Alamofire (4.5.1)
+  - HGToolBox (0.1.18):
     - Alamofire
     - lottie-ios
     - SwiftyJSON
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  HGToolBox: c17599ce6c092e3c5dd59f9e01fdae284509f1bc
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  HGToolBox: eb506ecf36007212521764fc8695b94bbd4cc0c5
   lottie-ios: 8c150606598931621e927377f1426d2d3e99282d
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 

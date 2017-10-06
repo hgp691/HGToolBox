@@ -50,11 +50,11 @@ open class HGFormViewController: UIViewController,UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
     
-    func ocultarTeclado(){
+    @objc func ocultarTeclado(){
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(_ sender: Notification) {
+    @objc func keyboardWillShow(_ sender: Notification) {
         if let userInfo = (sender as NSNotification).userInfo {
             let keyboardScreenFrameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
             let keyboardViewFrameEnd = view.convert(keyboardScreenFrameEnd, from: view.window)

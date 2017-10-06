@@ -68,6 +68,48 @@ public class HGCargador: NSObject {
         
     }
     
+    public init(endPoint:String,metodo:HTTPMethod,parametrosParaEnviar:[String:String]!,configuration:[String:Any],debug:Bool){
+        super.init()
+        
+        
+        if self.delegate != nil{
+            self.delegate.HGCargadorInicioCarga(cargador: self)
+        }
+        
+        let headers = self.basicAuth(appUSR: configuration["API_USER"] as! String, appPWD: configuration["API_PW"] as! String)
+        
+        
+        let url = "\(configuration["dominio"] as! String)\(endPoint)"
+        
+        
+        Alamofire.request(url, method: metodo, parameters: parametrosParaEnviar, encoding: URLEncoding.default, headers: headers).responseJSON { (respuesta) in
+            
+            switch respuesta.result{
+            case .success(let data):
+                self.procesarDatos(json: JSON(data), debug: debug)
+                break
+            case .failure(let error):
+                if debug{
+                    print("Error string serivicio: \(error.localizedDescription)")
+                }
+                if self.delegate != nil{
+                    let alerta = UIAlertController(title: "Error conexión",
+                                                   message: error.localizedDescription,
+                                                   preferredStyle: .alert);
+                    self.delegate.HGCargadorTerminoCargaConError(cargador: self, error: alerta)
+                }
+                break
+            }
+            
+            }.responseString { (respuesta) in
+                if debug{
+                    print("Respuesta string servicio: \(respuesta)")
+                }
+                
+        }
+        
+    }
+    
     private func procesarDatos(json:JSON,debug:Bool){
         if debug {
             print(json)

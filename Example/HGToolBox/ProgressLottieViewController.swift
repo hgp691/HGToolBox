@@ -21,7 +21,7 @@ class ProgressLottieViewController: UIViewController {
                     "loop":true
                     ] as [String : Any]
         
-        let progress = HGLottieProgress(view: self.view, configuration: opts, autoplay: true)
+        _ = HGLottieProgress(view: self.view, configuration: opts, autoplay: true)
 
         
     }
