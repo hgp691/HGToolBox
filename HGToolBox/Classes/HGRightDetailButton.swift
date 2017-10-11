@@ -261,9 +261,9 @@ public class HGRightDetailButton: UIView {
     private func existeFuente(nombre:String)->Bool{
         let fontFamilyNames = UIFont.familyNames
         for familyName in fontFamilyNames {
-            print("Familia \(familyName): ")
+            //print("Familia \(familyName): ")
             for fuente in UIFont.fontNames(forFamilyName: familyName){
-                print(fuente)
+              //  print(fuente)
                 if fuente == nombre{
                     return true
                 }
