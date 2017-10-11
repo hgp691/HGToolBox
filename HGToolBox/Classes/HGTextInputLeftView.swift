@@ -136,6 +136,14 @@ public class HGTextInputLeftView: UIView {
             }
         }
     }
+    @IBInspectable
+    public var colorFuente:UIColor = .white{
+        didSet{
+            if self._campo != nil{
+                self._campo.textColor = colorFuente
+            }
+        }
+    }
     
     private var _fuente:UIFont = UIFont(name: "ArialMT", size: 17.0)!{
         didSet{

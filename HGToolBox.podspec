@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HGToolBox'
-  s.version          = '0.1.19'
+  s.version          = '0.1.20'
   s.summary          = 'Toolbox de Horacio Guzmán Parra.'
 
 # This description is used to generate tags and improve search results.
