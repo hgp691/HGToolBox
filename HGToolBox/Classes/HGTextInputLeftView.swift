@@ -427,12 +427,14 @@ public class HGTextInputLeftView: UIView {
     
     private func ponerError(mensaje:String){
         self._error.text = mensaje
-        self._campo.layer.borderWidth = 2.0
+        self._campo.layer.borderWidth = 1.0
+        self._campo.layer.borderColor = self.colorError.cgColor
     }
     
     private func quitarError(){
         self._error.text = ""
-        self._campo.layer.borderWidth = 0.0
+        self._campo.layer.borderWidth = self.anchoBorde
+        self._campo.layer.borderColor = self.colorBorde.cgColor
     }
 }
 public enum HGTextInputType{
