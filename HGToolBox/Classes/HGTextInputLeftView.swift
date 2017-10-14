@@ -395,16 +395,16 @@ public class HGTextInputLeftView: UIView {
         }
     }
     private func validarPW()->Bool{
-        let pwRegEx = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{6,10}"
+        let pwRegEx = "(?=.*[a-z])(?=.*[A-Z]).{6,10}"
         let pwTest = NSPredicate(format:"SELF MATCHES %@", pwRegEx)
         if pwTest.evaluate(with: self._campo.text){
             self.quitarError()
             return true
         }else{
             if HGUtils.isSpanish{
-                self.ponerError(mensaje: "No cumple con lo esperado")
+                self.ponerError(mensaje: "Usar una mayúscula y 6 caracteres mín")
             }else{
-                self.ponerError(mensaje: "This is not what is expected")
+                self.ponerError(mensaje: "Must be at least 6 characters and a capital letter")
             }
             return false
         }
@@ -415,7 +415,7 @@ public class HGTextInputLeftView: UIView {
             return true
         }
         if HGUtils.isSpanish{
-            self.ponerError(mensaje: "Las contraseñas deben conincidir")
+            self.ponerError(mensaje: "Las contraseñas deben coincidir")
         }else{
             self.ponerError(mensaje: "The passwords don't match")
         }
