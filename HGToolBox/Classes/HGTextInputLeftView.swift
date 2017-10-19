@@ -526,7 +526,7 @@ public enum HGTextInputPWValidationType{
             let reg = "^.(?=.*[A-Z]).{\(min),\(max)}"
             return reg
         case .MayusculaSinTamaños:
-            let reg = "^.(?=.*[A-Z])"
+            let reg = ".*[A-Z]+.*"
             return reg
         }
     }
