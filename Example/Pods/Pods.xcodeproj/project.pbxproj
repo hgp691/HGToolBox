@@ -173,6 +173,7 @@
 		F9C94445F9F25DFC580ED45741394C0E /* LOTShapeStar.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE002BBBB3469F3A3C682AA6507F21F /* LOTShapeStar.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FAA0BEFF93762C434C804E3856FFB123 /* LOTComposition.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C96792248A588C8537AC7F7DA3F913 /* LOTComposition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAAB731C1F9912630068C5E8 /* HGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB731B1F9912630068C5E8 /* HGExtensions.swift */; };
+		FAAB73221F9957210068C5E8 /* HGCargadorHG.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB73211F9957210068C5E8 /* HGCargadorHG.swift */; };
 		FAFB025FE75184CCE0EFB3E855990E3B /* LOTNumberInterpolator.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CA398022FE05DED008C269F2C625E6 /* LOTNumberInterpolator.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FCACA440C66B135F44A532D839C9332F /* NSValue+Compat.h in Headers */ = {isa = PBXBuildFile; fileRef = 4078DD59552C001E909DFEF95FEF1A6F /* NSValue+Compat.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FFDA2F41E6990504683F700B4AA26113 /* LOTShapeTrimPath.m in Sources */ = {isa = PBXBuildFile; fileRef = D6855B247A30B650DCE35ED8108394DE /* LOTShapeTrimPath.m */; };
@@ -427,6 +428,7 @@
 		F1CDCC3D3768CD1D484AED5EFA36756B /* LOTShapeGradientFill.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTShapeGradientFill.h; path = "lottie-ios/Classes/Models/LOTShapeGradientFill.h"; sourceTree = "<group>"; };
 		F3E5C2C00ADB2B3EC689E7FBF5A832A2 /* LOTGradientFillRender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTGradientFillRender.h; path = "lottie-ios/Classes/RenderSystem/RenderNodes/LOTGradientFillRender.h"; sourceTree = "<group>"; };
 		FAAB731B1F9912630068C5E8 /* HGExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HGExtensions.swift; sourceTree = "<group>"; };
+		FAAB73211F9957210068C5E8 /* HGCargadorHG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HGCargadorHG.swift; path = HGToolBox/Classes/HGCargadorHG.swift; sourceTree = "<group>"; };
 		FABF87BEA9F54D674539CE925BF64A9E /* LOTAssetGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAssetGroup.h; path = "lottie-ios/Classes/Models/LOTAssetGroup.h"; sourceTree = "<group>"; };
 		FB9DB798B8198C34A83A841496617F49 /* LOTPathInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTPathInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTPathInterpolator.h"; sourceTree = "<group>"; };
 		FBDCD00D7853350BB2C5114F0C09AE01 /* LOTTransformInterpolator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTTransformInterpolator.h; path = "lottie-ios/Classes/RenderSystem/InterpolatorNodes/LOTTransformInterpolator.h"; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 				82E8EDE0CE26310A9FABFCEA3FAECCA0 /* HGTextInputLeftView.swift */,
 				EB4660EA0FAEF56C974BE54176B0D6A6 /* HGUtils.swift */,
 				FAAB731B1F9912630068C5E8 /* HGExtensions.swift */,
+				FAAB73211F9957210068C5E8 /* HGCargadorHG.swift */,
 				8D5EABE0A451D126CDB74C6AF6F8303C /* Support Files */,
 			);
 			name = HGToolBox;
@@ -1067,7 +1070,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1111,6 +1114,7 @@
 				61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */,
 				B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */,
 				A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */,
+				FAAB73221F9957210068C5E8 /* HGCargadorHG.swift in Sources */,
 				EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */,
 				BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */,
 				5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */,
@@ -1317,7 +1321,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1325,14 +1331,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -1346,6 +1358,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1430,7 +1443,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1438,15 +1453,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",

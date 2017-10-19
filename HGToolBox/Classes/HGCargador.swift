@@ -72,6 +72,7 @@ public class HGCargador: NSObject {
         super.init()
         
         
+        
         if self.delegate != nil{
             self.delegate.HGCargadorInicioCarga(cargador: self)
         }

@@ -59,25 +59,6 @@ extension UIViewController{
         self.navigationController?.navigationBar.topItem?.titleView = imageView
     }
     
-    func ConfigurarOcultarTeclado(){
-        // Do any additional setup after loading the view.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.ocultarTeclado))
-        self.view.addGestureRecognizer(tap)
-        
-        let swip = UISwipeGestureRecognizer(target: self, action: #selector(self.ocultarTeclado))
-        swip.direction = .down
-        self.view.addGestureRecognizer(swip)
-        let swip1 = UISwipeGestureRecognizer(target: self, action: #selector(self.ocultarTeclado))
-        swip1.direction = .up
-        self.view.addGestureRecognizer(swip1)
-        
-        
-    }
-    
-    @objc func ocultarTeclado(){
-        self.view.endEditing(true)
-    }
-    
 }
 
 public extension UIDevice {
