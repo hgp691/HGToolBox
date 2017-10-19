@@ -182,6 +182,10 @@ public class HGTextInputLeftView: UIView {
         }
     }
     
+    public var tamañoMinimo:Int = 6
+    public var tamañoMaximo:Int = 10
+    public var tipoValidacionContraseña:HGTextInputPWValidationType = .MayusculaYTamaños
+    
     public var delegate:UITextFieldDelegate!{
         didSet{
             if self._campo != nil{
@@ -395,7 +399,7 @@ public class HGTextInputLeftView: UIView {
         }
     }
     private func validarPW()->Bool{
-        let pwRegEx = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{6,10}"
+        let pwRegEx = self.tipoValidacionContraseña.Regex(min: self.tamañoMinimo, max: self.tamañoMaximo)
         let pwTest = NSPredicate(format:"SELF MATCHES %@", pwRegEx)
         if pwTest.evaluate(with: self._campo.text){
             self.quitarError()
@@ -495,4 +499,36 @@ public enum HGTextInputType{
             }
         }
     }
+}
+
+public enum HGTextInputPWValidationType{
+    case none
+    case tamañoMinimo
+    case tamañoMaximo
+    case tamañoMinimoYMaximo
+    case MayusculaYTamaños
+    case MayusculaSinTamaños
+    
+    public func Regex(min:Int,max:Int)->String{
+        switch self {
+        case .none:
+            return "[\\s\\S]*"
+        case .tamañoMinimo:
+            let reg = "^.{\(min),}$"
+            return reg
+        case .tamañoMaximo:
+            let reg = "^.{0,\(max)}$"
+            return reg
+        case .tamañoMinimoYMaximo:
+            let reg = "^.{\(min),\(max)}$"
+            return reg
+        case .MayusculaYTamaños:
+            let reg = "^.(?=.*[A-Z]).{\(min),\(max)}"
+            return reg
+        case .MayusculaSinTamaños:
+            let reg = "^.(?=.*[A-Z])"
+            return reg
+        }
+    }
+    
 }
