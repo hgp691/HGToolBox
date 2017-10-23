@@ -121,10 +121,17 @@ public class HGCargador: NSObject {
             }
         }else{
             if self.delegate != nil{
-                let alerta = UIAlertController(title: "Error",
-                                               message: json["errorMessage"].stringValue,
-                                               preferredStyle: .alert)
-                self.delegate.HGCargadorTerminoCargaConError(cargador: self, error: alerta)
+                if HGUtils.isSpanish{
+                    let alerta = UIAlertController(title: "Error",
+                                                   message: json["errorMessage"].stringValue,
+                                                   preferredStyle: .alert)
+                    self.delegate.HGCargadorTerminoCargaConError(cargador: self, error: alerta)
+                }else{
+                    let alerta = UIAlertController(title: "Error",
+                                                   message: json["errorMessage_en"].stringValue,
+                                                   preferredStyle: .alert)
+                    self.delegate.HGCargadorTerminoCargaConError(cargador: self, error: alerta)
+                }
             }
         }
     }
