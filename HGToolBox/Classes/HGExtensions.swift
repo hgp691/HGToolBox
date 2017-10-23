@@ -8,12 +8,6 @@
 import Foundation
 import UIKit
 
-//MARK: UIVIEW
-extension UIView{
-    func estaDebug()->Bool{
-        return false
-    }
-}
 
 extension UIViewController{
     

@@ -45,8 +45,8 @@ public class HGCargadorHG: NSObject {
         request.setValue(self.AuthorizationHeader(usr: configuration["API_USER"] as! String, pw: configuration["API_PW"] as! String), forHTTPHeaderField: "Authorization")
         
         if parametrosParaEnviar != nil && metodo != .get{
-            let jsonData = try? JSONSerialization.data(withJSONObject: parametrosParaEnviar)
-            request.httpBody = jsonData
+            //let jsonData = try? JSONSerialization.data(withJSONObject: parametrosParaEnviar)
+            request.httpBody = self.prepareData(params: parametrosParaEnviar)//jsonData
         }
         
         let task = URLSession.shared.dataTask(with: request) { (data, respuesta, error) in
@@ -105,6 +105,20 @@ public class HGCargadorHG: NSObject {
                 }
             }
         }
+    }
+    
+    private func prepareData(params:[String:String])->Data{
+        var cadena = ""
+        
+        params.keys.forEach { (key) in
+            cadena += key
+            cadena += "="
+            cadena += params[key]!
+            cadena += "&"
+        }
+        
+        print("Cadena parametros HGCargadorHG: \(cadena)")
+        return cadena.data(using: .utf8)!
     }
     
     private func AuthorizationHeader(usr:String,pw:String)->String{
