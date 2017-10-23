@@ -1,6 +1,6 @@
 {
   "name": "HGToolBox",
-  "version": "0.1.18",
+  "version": "1.0.26",
   "summary": "Toolbox de Horacio Guzmán Parra.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/hgp691/HGToolBox",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hgp691/HGToolBox.git",
-    "tag": "0.1.18"
+    "tag": "1.0.26"
   },
   "platforms": {
     "ios": "9.1"
