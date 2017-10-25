@@ -21,7 +21,7 @@ extension UIViewController{
         ]
          */
         
-        self.navigationController?.navigationBar.titleTextAttributes = atributosTextoNavBar as Any as? [NSAttributedStringKey : Any]
+        self.navigationController?.navigationBar.titleTextAttributes = atributosTextoNavBar as Any as? [NSAttributedStringKey : Any] as [String : Any]?
         
         let navbarColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         let image = UIImage()
