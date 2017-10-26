@@ -12,11 +12,13 @@ import UIKit
 extension UIViewController{
     
     //MARK FUNCIONES PARA CONFIGURAR NAVBAR
-    func configurarNavBarTransparente(){
+    func configurarNavBarTransparente(atributosTextoNavBar:[NSAttributedStringKey : Any]){
+        /*
         let atributosTextoNavBar = [
             NSAttributedStringKey.foregroundColor: UIColor.white,
             NSAttributedStringKey.font: UIFont(name: "Akrobat-Bold", size: 18.0)
         ]
+         */
         self.navigationController?.navigationBar.titleTextAttributes = atributosTextoNavBar as Any as? [NSAttributedStringKey : Any]
         
         let navbarColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)

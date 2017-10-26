@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import SwiftyJSON
 import HGToolBox
 
 @available(iOS 9.1, *)
 class ViewController: UIViewController {
     
     //@IBOutlet var btnHGRightDetailButton: HGRightDetailButton!
-
+    @IBOutlet var latitud: UITextField!
+    @IBOutlet var longitud: UITextField!
+    @IBOutlet var resultado: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //self.btnHGRightDetailButton.addTarget(target: self, action: #selector(self.actionForHGRightDetailButton), foR: .touchUpInside)
+        //14.079110,-87.189372
         
-        print(HGUtils.isSpanish)
+        self.latitud.text = "14.079110"
+        self.longitud.text = "-87.189372"
         
     }
 
@@ -32,16 +37,33 @@ class ViewController: UIViewController {
     func actionForHGRightDetailButton(){
         print("Hola btnHGRightDetailButton")
     }
- 
-    func esEspanol()->Bool{
-        let pre = Locale.preferredLanguages[0]
-        let idioma=pre.components(separatedBy: "-")
-        ////print(idioma[0])
-        if idioma[0] == "es" {
-            return true
-        }else{
-            return false
-        }
+    @IBAction func efectuar(_ sender: Any) {
+        
+        let lat = Double(self.latitud.text!)
+        let lng = Double(self.longitud.text!)
+        
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=\(lat!),\(lng!)&language=es&key=AIzaSyD3dXuwi2WQx4iOkZuxqfd-UOsiHAzIr8w"
+        print("Enviar Request \(urlString)")
+        
+        URLSession.shared.dataTask(with: URL(string: urlString)!) { (data, response, err) in
+            guard let data = data,err == nil else{
+                DispatchQueue.main.async {
+                    self.resultado.text = err?.localizedDescription
+                }
+                return
+            }
+            
+            let json = JSON(data)
+            print(json)
+            let dataparser = HGGMDataParser()
+            
+            DispatchQueue.main.async {
+                self.resultado.text = dataparser.retornaNombreCiudad(obj: json["results"])
+            }
+            
+            
+        }.resume()
+        
     }
     
 }

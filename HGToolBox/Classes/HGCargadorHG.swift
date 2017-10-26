@@ -51,11 +51,7 @@ public class HGCargadorHG: NSObject {
         
         let task = URLSession.shared.dataTask(with: request) { (data, respuesta, error) in
             
-            if progress != nil{
-                DispatchQueue.main.async {
-                    progress.removeFromSuperview()
-                }
-            }
+            
             
             guard let data = data, error == nil else {
                 if debug{
@@ -67,9 +63,19 @@ public class HGCargadorHG: NSObject {
                                                    preferredStyle: .alert);
                     self.delegate.HGCargadorHGTerminoCargaConError(cargador: self, error: alerta)
                 }
+                if progress != nil{
+                    DispatchQueue.main.async {
+                        progress.removeFromSuperview()
+                    }
+                }
                 return
             }
             self.procesarDatos(json: JSON(data), debug: debug)
+            if progress != nil{
+                DispatchQueue.main.async {
+                    progress.removeFromSuperview()
+                }
+            }
         }
         task.resume()
         

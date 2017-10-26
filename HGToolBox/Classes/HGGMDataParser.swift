@@ -2,7 +2,7 @@
 //  HGGMDataParser.swift
 //  Alamofire
 //
-//  Created by Alexander Ortiz on 6/09/17.
+//  Created by Horacio Guzmán on 6/09/17.
 //
 
 import UIKit
@@ -10,19 +10,17 @@ import SwiftyJSON
 
 public class HGGMDataParser: NSObject {
     
-    
     public func retornaNombreCiudad(obj:JSON)->String{
-        let data = retornaObjetoConId(arreglo: obj[0]["address_components"], cadena: "administrative_area_level_2")
-        if data != JSON.null{
-            return data["long_name"].stringValue
-        }else{
-            let data1 = self.retornaObjetoConId(arreglo: obj[0]["address_components"], cadena: "administrative_area_level_1")
-            if data1 != JSON.null{
-                return data1["long_name"].stringValue
-            }else{
-                return "NO SE ENCONTRO"
+        //print("ENTRA A RETORNA CIUDAD")
+        
+        for i in 0...obj.count-1{
+            let data = retornaObjetoConId(arreglo: obj[i]["address_components"], cadena: "locality")
+            if data != JSON.null{
+                return data["long_name"].stringValue
             }
         }
+        
+        return "NO SE ENCONTRO"
     }
     
     public func retornaCodigoPais(obj:JSON)->String{

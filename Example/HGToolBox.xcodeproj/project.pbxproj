@@ -14,10 +14,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C4329F1C1F469A4E00148FEE /* FormularioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4329F1B1F469A4E00148FEE /* FormularioViewController.swift */; };
 		ECAFB9A04C028802494AB8DC /* Pods_HGToolBox_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6827978D2FD6E12BF4A0A6EB /* Pods_HGToolBox_Example.framework */; };
 		FAA3BFCA1F47CA240078D4C9 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = FAA3BFC91F47CA240078D4C9 /* location.json */; };
-		FAA3BFCC1F47CA670078D4C9 /* ProgressLottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3BFCB1F47CA670078D4C9 /* ProgressLottieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +46,9 @@
 		6827978D2FD6E12BF4A0A6EB /* Pods_HGToolBox_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HGToolBox_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877F4706C7C05E9E75BDA851 /* Pods-HGToolBox_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HGToolBox_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HGToolBox_Tests/Pods-HGToolBox_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8D1499185E3780C689CA88 /* Pods_HGToolBox_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HGToolBox_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4329F1B1F469A4E00148FEE /* FormularioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormularioViewController.swift; sourceTree = "<group>"; };
 		CAD771616B42A140ADD8B325 /* HGToolBox.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HGToolBox.podspec; path = ../HGToolBox.podspec; sourceTree = "<group>"; };
 		ED5918CD959F805E6A7E74B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FAA3BFC91F47CA240078D4C9 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
-		FAA3BFCB1F47CA670078D4C9 /* ProgressLottieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLottieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +97,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				C4329F1B1F469A4E00148FEE /* FormularioViewController.swift */,
-				FAA3BFCB1F47CA670078D4C9 /* ProgressLottieViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -398,8 +392,6 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				FAA3BFCC1F47CA670078D4C9 /* ProgressLottieViewController.swift in Sources */,
-				C4329F1C1F469A4E00148FEE /* FormularioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
