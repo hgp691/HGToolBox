@@ -15,17 +15,18 @@ public protocol HGCargadorHGDelegate{
 }
 
 public class HGCargadorHG: NSObject {
+    
     public var delegate:HGCargadorHGDelegate!
     public var tag:Int!
+    var progress:HGLottieProgress!
     
     public init(endPoint:String,metodo:HGHttpMethod,parametrosParaEnviar:[String:String]!,configuration:[String:Any],viewParaCargador:UIView!,debug:Bool){
         super.init()
         
-        var progress:HGLottieProgress!
         
         if viewParaCargador != nil{
             let animationConfs = configuration["lottieAnimation"] as! [String:Any]
-            progress = HGLottieProgress(view: viewParaCargador, configuration: animationConfs, autoplay: true)
+            self.progress = HGLottieProgress(view: viewParaCargador, configuration: animationConfs, autoplay: true)
             viewParaCargador.addSubview(progress)
         }
         
@@ -57,25 +58,20 @@ public class HGCargadorHG: NSObject {
                 if debug{
                     print("\(String(describing: error?.localizedDescription))")
                 }
+                if self.progress != nil{
+                    DispatchQueue.main.async {
+                        self.progress.removeFromSuperview()
+                    }
+                }
                 if self.delegate != nil{
                     let alerta = UIAlertController(title: "Error",
                                                    message: error?.localizedDescription,
                                                    preferredStyle: .alert);
                     self.delegate.HGCargadorHGTerminoCargaConError(cargador: self, error: alerta)
                 }
-                if progress != nil{
-                    DispatchQueue.main.async {
-                        progress.removeFromSuperview()
-                    }
-                }
                 return
             }
             self.procesarDatos(json: JSON(data), debug: debug)
-            if progress != nil{
-                DispatchQueue.main.async {
-                    progress.removeFromSuperview()
-                }
-            }
         }
         task.resume()
         
@@ -90,8 +86,19 @@ public class HGCargadorHG: NSObject {
             if self.delegate != nil{
                 self.delegate.HGCargadorHGTerminoCarga(cargador: self, respuesta: json)
             }
+            if self.progress != nil{
+                DispatchQueue.main.async {
+                    self.progress.removeFromSuperview()
+                }
+            }
         }else{
+            if self.progress != nil{
+                DispatchQueue.main.async {
+                    self.progress.removeFromSuperview()
+                }
+            }
             if self.delegate != nil{
+                
                 
                 if debug{
                     print(json["errorMessage"])

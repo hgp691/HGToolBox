@@ -348,6 +348,12 @@ public class HGTextInputLeftView: UIView {
         }
     }
     
+    public func setPlaceHolder(placeholder:String){
+        if self._campo != nil{
+            self._campo.placeholder = placeholder
+        }
+    }
+    
     public func esValido()->Bool{
         if self.noEsVacio(){
             switch self._tipo {

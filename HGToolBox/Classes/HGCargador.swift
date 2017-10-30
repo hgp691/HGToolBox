@@ -16,18 +16,23 @@ public protocol HGCargadorDelegate{
     func HGCargadorTerminoCargaConError(cargador:HGCargador,error:UIAlertController)
 }
 
+
+
 public class HGCargador: NSObject {
     
     public var delegate:HGCargadorDelegate!
     
     public var tag:Int!
     
+    private var progress:HGLottieProgress!
+    
     public init(endPoint:String,metodo:HTTPMethod,parametrosParaEnviar:[String:String]!,configuration:[String:Any],viewParaTamanoCargador:UIView,viewParaPoner:UIView,debug:Bool){
         super.init()
         
         let animationConfs = configuration["lottieAnimation"] as! [String:Any]
        
-        let progress = HGLottieProgress(view: viewParaPoner, configuration: animationConfs, autoplay: true)
+        self.progress = HGLottieProgress(view: viewParaPoner, configuration: animationConfs, autoplay: true)
+        
         if self.delegate != nil{
             self.delegate.HGCargadorInicioCarga(cargador: self)
         }
@@ -40,7 +45,6 @@ public class HGCargador: NSObject {
         
         Alamofire.request(url, method: metodo, parameters: parametrosParaEnviar, encoding: URLEncoding.default, headers: headers).responseJSON { (respuesta) in
             
-            progress.removeFromSuperview()
             
             switch respuesta.result{
             case .success(let data):
@@ -49,6 +53,11 @@ public class HGCargador: NSObject {
             case .failure(let error):
                 if debug{
                     print("Error string serivicio: \(error.localizedDescription)")
+                }
+                if self.progress != nil{
+                    DispatchQueue.main.async {
+                        self.progress.removeFromSuperview()
+                    }
                 }
                 if self.delegate != nil{
                     let alerta = UIAlertController(title: "Error conexión",
@@ -119,7 +128,17 @@ public class HGCargador: NSObject {
             if self.delegate != nil{
                 self.delegate.HGCargadorTerminoCarga(cargador: self, respuesta: json)
             }
+            if self.progress != nil{
+                DispatchQueue.main.async {
+                    self.progress.removeFromSuperview()
+                }
+            }
         }else{
+            if self.progress != nil{
+                DispatchQueue.main.async {
+                    self.progress.removeFromSuperview()
+                }
+            }
             if self.delegate != nil{
                 if HGUtils.isSpanish{
                     let alerta = UIAlertController(title: "Error",
@@ -133,6 +152,7 @@ public class HGCargador: NSObject {
                     self.delegate.HGCargadorTerminoCargaConError(cargador: self, error: alerta)
                 }
             }
+            
         }
     }
     
