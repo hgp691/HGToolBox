@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HGToolBox'
-  s.version          = '1.0.34'
+  s.version          = '1.0.35'
   s.summary          = 'Toolbox de Horacio Guzmán Parra.'
 
 # This description is used to generate tags and improve search results.
@@ -40,5 +40,5 @@ TODO: Add long description of the pod here.
   s.frameworks = 'UIKit'
   s.dependency 'Alamofire'
   s.dependency 'SwiftyJSON'
-  s.dependency 'lottie-ios'
+  s.dependency 'lottie-ios','2.1.3'
 end
